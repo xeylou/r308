@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 '''
 gestion d'étudiants, de leurs notes & des promotions avec des objets simples
 
