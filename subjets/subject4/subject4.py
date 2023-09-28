@@ -56,6 +56,53 @@ class Creneau():
             return(True)
 
         return(False)
+    
+    def duree(self):
+        minutes = str(self.minuteFin - self.minuteDebut)
+        heures = str(self.heureFin - self.heureDebut)
+        return(f"{heures}:{minutes}")
+    
+class Planning:
+    def __init__(self, tableauCreneaux = None):
+        self.tableauCreneaux = tableauCreneaux
+        # tableau qui contiendra des instances d'objects creneaux
+    
+    def ajouterCreneau(self, inputCreneau):
+        self.tableauCreneaux.append(inputCreneau)
+    
+    def dureeTotal(self):
+        minutesTotales
+        heuresTotales
+        for creneaux in self.tableauCreneaux:
+            heuresTotales += creneaux.duree()
+    
+class CreneauCours(Creneau):
+    def __init__(self, heureDebut, heureFin, minuteDebut, minuteFin):
+        super().__init__(heureDebut, heureFin, minuteDebut, minuteFin)
+
+    def etd(self):
+        return(self.duree())
+
+class CreneauTD(Creneau):
+    def __init__(self, heureDebut, heureFin, minuteDebut, minuteFin):
+        super().__init__(heureDebut, heureFin, minuteDebut, minuteFin)
+
+    def etd(self):
+        return(self.duree()*0.5)
+
+class CreneauTP(Creneau):
+    def __init__(self, heureDebut, heureFin, minuteDebut, minuteFin):
+        super().__init__(heureDebut, heureFin, minuteDebut, minuteFin)
+
+    def etd(self):
+        return(self.duree()*0.33)
+    
+
+
+
+
+            
+        
 
 
 # initialisation des valeurs

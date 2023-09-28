@@ -113,6 +113,7 @@ arbre1.inserer(1)
 arbre1.inserer(5)
 
 # https://asciiflow.com
+
 # print(f"\narbre:\n\n         3\n         │\n         │\n    2 ◄──┴──► 9\n    │         │\n    │         │\n1◄──┘     5◄──┘\n")
 print(f"\ngraphique de l'arbre:\n\n          3\n\n          │\n          │\n     2 ◄──┴──► 9\n\n     │         │\n     │         │\n1 ◄──┘    5 ◄──┘\n")
 
