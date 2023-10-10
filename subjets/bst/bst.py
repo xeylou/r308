@@ -95,10 +95,50 @@ class noeud():
             tableauPasse.append(self.valeur)
         return(tableauPasse)
 
+    def parcoursLargeur(self):
+        # si arbre vide
+        if self is None:
+            return []
+        file = File()
+        valeurs_parcours = []
+        # on enfile tout le monde
+        file.enfiler(self)
+        while not file.est_vide():
+            # on regarde premier noeud
+            noeud_courant = file.defiler()
+            valeurs_parcours.append(noeud_courant.valeur)
+            if noeud_courant.enfantGauche is not None:
+                file.enfiler(noeud_courant.enfantGauche)
+            if noeud_courant.enfantDroit is not None:
+                file.enfiler(noeud_courant.enfantDroit)
+        return valeurs_parcours
 
-class arbre():
-    def __init__(self, racine):
-        self.racine = racine
+
+class File:
+    def __init__(self):
+        self.queue = []
+
+    def enfiler(self, valeur):
+        self.queue.append(valeur)
+
+    def defiler(self):
+        if not self.est_vide():
+            return self.queue.pop(0)
+        else:
+            return None
+
+    def est_vide(self):
+        return len(self.queue) == 0
+    
+    def afficher_file(self):
+        return queue
+
+
+
+
+# class arbre():
+#     def __init__(self, racine):
+#         self.racine = racine
 
 
 ###########
@@ -137,3 +177,5 @@ print(f"\nparcours infixe:")
 print(arbre1.parcoursInfix())
 print(f"\nparcours postfix/suffix:")
 print(arbre1.parcoursPostfix())
+print(f"\nparcours largeur:")
+print(arbre1.parcoursLargeur())
