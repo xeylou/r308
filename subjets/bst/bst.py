@@ -101,14 +101,16 @@ class noeud():
             return []
         file = File()
         valeurs_parcours = []
-        # on enfile tout le monde
+        # on enfile le noeud raicne
         file.enfiler(self)
         while not file.est_vide():
-            # on regarde premier noeud
             noeud_courant = file.defiler()
+            # ajoute noeud courant à la liste des noeuds parcourus
             valeurs_parcours.append(noeud_courant.valeur)
+            # pareil pour son gauche si existe (seront enfilés)
             if noeud_courant.enfantGauche is not None:
                 file.enfiler(noeud_courant.enfantGauche)
+            # même chose pour droit
             if noeud_courant.enfantDroit is not None:
                 file.enfiler(noeud_courant.enfantDroit)
         return valeurs_parcours
