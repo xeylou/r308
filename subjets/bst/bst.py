@@ -100,20 +100,20 @@ class noeud():
         if self is None:
             return []
         file = File()
-        valeurs_parcours = []
-        # on enfile le noeud raicne
+        valeurs = []
+        # on enfile le noeud racine
         file.enfiler(self)
         while not file.est_vide():
-            noeud_courant = file.defiler()
+            noeudCourant = file.defiler()
             # ajoute noeud courant à la liste des noeuds parcourus
-            valeurs_parcours.append(noeud_courant.valeur)
+            valeurs.append(noeudCourant.valeur)
             # pareil pour son gauche si existe (seront enfilés)
-            if noeud_courant.enfantGauche is not None:
-                file.enfiler(noeud_courant.enfantGauche)
+            if noeudCourant.enfantGauche is not None:
+                file.enfiler(noeudCourant.enfantGauche)
             # même chose pour droit
-            if noeud_courant.enfantDroit is not None:
-                file.enfiler(noeud_courant.enfantDroit)
-        return valeurs_parcours
+            if noeudCourant.enfantDroit is not None:
+                file.enfiler(noeudCourant.enfantDroit)
+        return valeurs
 
 
 class File:
