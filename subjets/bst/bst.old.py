@@ -95,7 +95,6 @@ class noeud():
             tableauPasse.append(self.valeur)
         return(tableauPasse)
 
-# https://www.youtube.com/watch?v=qyFns_VP2PA
     def parcoursLargeur(self):
         # si arbre vide
         if self is None:
@@ -115,22 +114,6 @@ class noeud():
             if noeudCourant.enfantDroit is not None:
                 file.enfiler(noeudCourant.enfantDroit)
         return valeurs
-
-
-    # def parcoursEnLargeur(self):
-    #     if self is None:
-    #         return []
-    #     valeurs = []
-    #     ma_file = file()
-    #     ma_file.enfiler(self)
-    #     while not ma_file.estVide():
-    #         tmp = ma_file.defiler()
-    #         valeurs.append(tmp)
-    #         if tmp.enfantGauche is not None:
-    #             ma_file.enfiler(self.enfantGauche.valeur)
-    #         if tmp.enfantDroit is not None:
-    #             ma_file.enfiler(self.enfantDroit.valeur)
-    #     return valeurs
 
 
 class File:
